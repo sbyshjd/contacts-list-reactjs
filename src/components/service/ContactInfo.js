@@ -13,7 +13,7 @@ class ContactInfoService {
     }
 
     getMany = () => {
-        return this.service.get('/?results=100').then(response => response.data)
+        return this.service.get('/?results=200').then(response => response.data)
     }
 
 }

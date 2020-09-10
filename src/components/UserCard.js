@@ -17,7 +17,7 @@ export default class UserCard extends Component {
                     <img src={this.props.user.picture.large} alt='profile'></img>
                 </div>   
                 <div className='user-card-info'> 
-                    <h2>{this.props.user.name.last.toUpperCase()}, {this.props.user.name.first}</h2>
+                    <h2>{this.props.user.name.last.toUpperCase()}, {this.props.user.name.first.toLowerCase()}</h2>
                     <div className='d-flex'>
                         <div className='mr-3'>
                         <p><strong>e mail</strong></p> 
