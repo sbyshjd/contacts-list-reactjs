@@ -1,0 +1,53 @@
+.user-card {
+    background-color: rgb(238, 238, 238);
+    background: linear-gradient(to top,rgb(169, 169, 169) ,rgb(238, 238, 238) 5%,rgb(238, 238, 238) 95%,rgb(169, 169, 169));
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    border: 1px solid rgb(169, 169, 169);
+}
+
+.user-card-img {
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+}
+/* the close button */
+.user-card-img button {
+    color: rgb(169, 169, 169);
+    font-size: 1rem;
+    background: none;
+    border: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+/* the user image */
+.user-card-img img {
+    border-radius: 50%;
+    box-shadow:  3px 3px 5px rgba(0, 0, 0, 0.5)
+}
+
+.user-card-info {
+    margin-top: 1rem;
+}
+/* the user name */
+.user-card-info h2 {
+    color: rgb(169, 169, 169);
+    margin-bottom: 2rem;
+}
+
+.user-card-info p {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+
+
+/* the vertical user name part */
+.vertical-rl {
+    writing-mode: vertical-rl;
+    color: white;
+    display: inline-block;
+    background-color: tomato;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
