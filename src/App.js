@@ -49,7 +49,7 @@ export default class App extends Component {
     return (
       <div className="App">
       <div className='container-fluid'>
-      <h5 className='text-center'>Contacts List</h5>
+      <h5 className='text-center mb-3'>Contacts List</h5>
       {/* the tab nav part */}
         <div className='d-flex flex-wrap pt-1'>
         {this.state.alphabet.map((letter,i) => (<button 
@@ -58,7 +58,7 @@ export default class App extends Component {
             key={letter}
             onClick={(e) => this.btnClick(i)}
             >
-              {letter}<i>{this.state.contactNumberList[i]}</i>
+              {letter} <i>{this.state.contactNumberList[i]}</i>
             </button>))}
         </div>
       {/* the contacts-list part */}
