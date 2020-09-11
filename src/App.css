@@ -1,5 +1,7 @@
 .App {
+    min-height: 100vh;
     padding: 2rem;
+    
 }
 
 .letter-btn {
@@ -45,8 +47,17 @@
     font-weight: bold;
 }
 
+.user-card-replace {
+    height:200px
+}
+
 @media only screen and (max-width: 1200px) {
     .contact {
         width:100%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .user-card-replace {
+        height:400px
     }
   }

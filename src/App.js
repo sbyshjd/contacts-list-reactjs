@@ -68,7 +68,7 @@ export default class App extends Component {
         <div className='d-flex flex-wrap justify-content-between pl-3 pr-3 pt-3 pb-5 contacts-list'>
         {this.state.contactsList
             .filter(p => p.name.last[0].toLowerCase()===this.state.alphabet[this.state.selected])
-            .map(p => <div className='pt-4 pb-4 contact'
+            .map(p => <div className='pt-3 pb-3 contact'
                       style={{position:'relative'}} 
                       key={p.login.uuid} 
                       onClick={(e)=> {
@@ -79,6 +79,9 @@ export default class App extends Component {
         {/* show the detailed page or not */}
                       {p.login.uuid===this.state.userSelected ? <UserCard user={p} closeWindow={this.closeClick}></UserCard> : null}
                       </div>)}
+        </div>
+        <div className='user-card-replace'>
+
         </div>
       </div>  
       </div>
