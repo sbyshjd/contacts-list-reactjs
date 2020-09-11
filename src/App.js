@@ -42,9 +42,18 @@ export default class App extends Component {
         selected:0
       })
     })
+
+    window.addEventListener('click',(e)=> {
+      console.log('............',e.target.tagName)
+      if(e.target.tagName==='HTML') {
+        this.closeClick(e)
+      }
+      
+    })
+
   }
   render() {
-
+    
     return (
       <div className="App"
       onClick={(e) => { 
@@ -79,9 +88,6 @@ export default class App extends Component {
         {/* show the detailed page or not */}
                       {p.login.uuid===this.state.userSelected ? <UserCard user={p} closeWindow={this.closeClick}></UserCard> : null}
                       </div>)}
-        </div>
-        <div className='user-card-replace'>
-
         </div>
       </div>  
       </div>
