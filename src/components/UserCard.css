@@ -10,7 +10,7 @@
 
 .user-card-img {
     margin-left: 1rem;
-    margin-right: 1.5rem;
+    margin-right: 0.5rem;
 }
 /* the close button */
 .user-card-img button {
@@ -30,6 +30,7 @@
 
 .user-card-info {
     margin-top: 1rem;
+    margin-left: 1rem;
 }
 /* the user name */
 .user-card-info h2 {

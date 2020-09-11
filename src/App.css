@@ -23,6 +23,8 @@
 
 .active {
     border-style: solid solid none solid;
+    font-weight: bold;
+    background: linear-gradient(to top,rgb(238, 238, 238) 85%,rgb(169, 169, 169));
 }
 
 

@@ -20,7 +20,6 @@ export default class App extends Component {
   }
 
   btnClick = i => {
-    console.log(i)
     this.setState({
       selected:i
     })
@@ -58,7 +57,7 @@ export default class App extends Component {
             key={letter}
             onClick={(e) => this.btnClick(i)}
             >
-              {letter} <i>{this.state.contactNumberList[i]}</i>
+              {letter} <i className='d-none d-md-block'>{this.state.contactNumberList[i]}</i>
             </button>))}
         </div>
       {/* the contacts-list part */}
