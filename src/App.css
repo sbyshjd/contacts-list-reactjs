@@ -1,5 +1,5 @@
 .App {
-    margin: 2rem;
+    padding: 2rem;
 }
 
 .letter-btn {
@@ -40,6 +40,9 @@
     border-bottom: 2px dashed rgb(169, 169, 169);
     width:49%;
     cursor: pointer;
+}
+.contact:hover .contact-name {
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 1200px) {

@@ -46,7 +46,11 @@ export default class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <div className="App"
+      onClick={(e) => { 
+                        console.log(e.target)
+                    this.closeClick(e)}}
+      >
       <div className='container-fluid'>
       <h5 className='text-center mb-3'>Contacts List</h5>
       {/* the tab nav part */}
@@ -67,8 +71,11 @@ export default class App extends Component {
             .map(p => <div className='pt-4 pb-4 contact'
                       style={{position:'relative'}} 
                       key={p.login.uuid} 
-                      onClick={(e)=> this.setState({userSelected:p.login.uuid})}>
-                      {p.name.first},  {p.name.last.toUpperCase()}
+                      onClick={(e)=> {
+                        e.stopPropagation()
+                        this.setState({userSelected:p.login.uuid})}
+                        }>
+                      <div className='contact-name'>{p.name.first},  {p.name.last.toUpperCase()}</div>
         {/* show the detailed page or not */}
                       {p.login.uuid===this.state.userSelected ? <UserCard user={p} closeWindow={this.closeClick}></UserCard> : null}
                       </div>)}

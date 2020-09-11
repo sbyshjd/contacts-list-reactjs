@@ -6,7 +6,9 @@ export default class UserCard extends Component {
 
     render() {
         return (
-            <div className='user-card d-md-flex align-items-start' style={{position:'absolute',zIndex:10}}>
+            <div className='user-card d-md-flex align-items-start' style={{position:'absolute',zIndex:10}}
+            onClick={(e)=> {}}
+            >
                 <div className='user-card-img'>
                     <button className='d-block'
                     onClick={(e) => { 
