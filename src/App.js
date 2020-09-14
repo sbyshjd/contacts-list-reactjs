@@ -42,7 +42,7 @@ export default function App () {
     return (
       <div className="App" onClick={(e) => { closeClick(e)}}>
         <div className='container-fluid'>
-          <h5 className='text-center mb-3'>Contacts List</h5>
+          <h1 className='text-center mb-3' style={{fontSize:'2rem'}}>Contacts List</h1>
         {/* the tab nav part */}
           <div className='d-flex flex-wrap pt-1'>
             {alphabet.map((letter,i) => (<button 
