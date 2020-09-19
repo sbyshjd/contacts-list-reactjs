@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.scss";
 import { alphabet } from "./basicVariables";
-import contactsListAPI from "./components/service/ContactInfo";
+import contactsListAPI from "./components/service/ApiService";
 import UserCard from "./components/UserCard";
 
 export default function App() {
@@ -18,29 +18,31 @@ export default function App() {
     contactsListAPI().then((res) => {
       const newContactsList = res.results;
       const newContactNumberList = alphabet.map(
-        (letter) =>
-          newContactsList.filter((p) => p.name.last[0].toLowerCase() === letter)
-            .length
+        letter =>newContactsList.filter((p) => p.name.last[0].toLowerCase() === letter).length
       );
       setContactsList(newContactsList);
       setContactNumberList(newContactNumberList);
     });
+    if(window) {
+      window.addEventListener("click", closeClick,false);
+    }
+    return () => {
+      window.addEventListener("click", closeClick,false);
+    }
   }, []);
 
-  window.addEventListener("click", (e) => {
-    console.log("............", e.target.tagName);
-    if (e.target.tagName === "HTML") {
-      this.closeClick(e);
-    }
-  });
+  
+
+  // window.removeEventListener('click',(e) => {
+  //   // e.stopPropagation()
+  //   closeClick()
+  //   console.log(e.target)
+  //   // console.log(e.currentTarget)
+  // },false)
 
   return (
-    <div
-      className="App"
-      onClick={(e) => {
-        closeClick(e);
-      }}
-    >
+    
+    <div className="App">
       <h1 className="text-center mb-3" style={{ fontSize: "2rem" }}>
         Contacts List
       </h1>
@@ -55,7 +57,9 @@ export default function App() {
             }
             disabled={contactNumberList[i] === 0}
             key={letter}
-            onClick={(e) => setSelected(i)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setSelected(i)}}
           >
             {letter}{" "}
             <i className="nav__num d-none d-md-block">{contactNumberList[i]}</i>

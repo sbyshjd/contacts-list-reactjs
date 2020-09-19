@@ -7,13 +7,12 @@ export default function UserCard(props) {
     <div
       className="user-card d-md-flex align-items-start"
       style={{ position: "absolute", zIndex: 10 }}
-      onClick={(e) => {}}
     >
       <button
         className="user-card__button d-block"
         onClick={(e) => {
           e.stopPropagation();
-          props.closeWindow(e);
+          props.closeWindow();
         }}
       >
         <VscChromeClose />
