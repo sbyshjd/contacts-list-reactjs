@@ -1,21 +1,7 @@
 import axios from 'axios'
 
-class ContactInfoService {
-    constructor() {
-        let service = axios.create({
-            baseURL:'https://randomuser.me/api'
-        })
-        this.service = service
-    }
-
-    getOne = () => {
-        return this.service.get('/').then(response => response.data)
-    }
-
-    getMany = () => {
-        return this.service.get('/?results=200').then(response => response.data)
-    }
+export default function contactsListAPI () {
+    
+    return axios.get('https://randomuser.me/api/?results=200').then(response => response.data)
 
 }
-
-export default ContactInfoService

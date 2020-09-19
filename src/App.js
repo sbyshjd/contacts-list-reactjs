@@ -1,12 +1,9 @@
 import React, { useState, useEffect} from 'react'
 import './App.css'
-import ContactInfoService from './components/service/ContactInfo'
+import { alphabet } from './basicVariables'
+import contactsListAPI from './components/service/ContactInfo'
 import UserCard from './components/UserCard'
 
-//the letters array
-const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-// the api from the /randomuser/ api
-const apiService = new ContactInfoService();
 
 
 export default function App () {
@@ -22,7 +19,7 @@ export default function App () {
   }
 
   useEffect(() => {
-    apiService.getMany()
+    contactsListAPI()
     .then(res => {
       const newContactsList = res.results
       const newContactNumberList = alphabet.map(letter => newContactsList.filter(p => p.name.last[0].toLowerCase()===letter).length)
@@ -67,7 +64,7 @@ export default function App () {
                           }}>
                         <div className='contact-name'>{p.name.first},  {p.name.last.toUpperCase()}</div>
           {/* show the detailed page or not */}
-                        {p.login.uuid===userSelected ? <UserCard user={p} closeWindow={closeClick}></UserCard> : null}
+                        {p.login.uuid===userSelected ? <UserCard user={p} closeWindow={closeClick}/> : null}
                         </div>)}
           </div>
         </div>  
