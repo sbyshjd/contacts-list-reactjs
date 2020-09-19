@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.scss";
+import "./styles/App.scss";
 import { alphabet } from "./basicVariables";
 import contactsListAPI from "./components/service/ContactInfo";
 import UserCard from "./components/UserCard";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./UserCard.scss";
+import "../styles/UserCard.scss";
 import { VscChromeClose } from "react-icons/vsc";
 
 export default function UserCard(props) {
