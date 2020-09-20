@@ -1,38 +1,26 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+import { cleanup } from "@testing-library/react";
+import { render } from "react-dom";
 import { act } from "react-dom/test-utils";
 import App from "../App";
-import axios from 'axios';
+import axios from "axios";
 
+import { fakeInfoForTesting } from "../basicVariables";
 
-import {fakeInfoForTesting} from '../basicVariables';
+const root = document.createElement("div");
+document.body.appendChild(root);
 
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
+afterEach(cleanup);
 
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
+jest.mock("axios");
 
-
-jest.mock('axios')
-
-test("get the contact person info from api", async () => {
-
+it("get the contact person info from api", async () => {
   axios.get.mockResolvedValue({
-    data:{results:[fakeInfoForTesting]}
-  })
-  
-  await act(async () => {
-    render(<App />, container);
+    data: { results: [fakeInfoForTesting] },
   });
-  expect(container.textContent).toContain(fakeInfoForTesting.name.last)
-  
+
+  await act(async () => {
+    render(<App />, root);
+  });
+  expect(root.textContent).toContain(fakeInfoForTesting.name.last);
 });

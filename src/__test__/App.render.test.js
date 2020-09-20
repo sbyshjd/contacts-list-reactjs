@@ -1,30 +1,19 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+// import { render, unmountComponentAtNode } from "react-dom";
+import {cleanup, fireEvent, render, wait} from '@testing-library/react'
 import { act } from "react-dom/test-utils";
 import App from "../App";
 
 import { alphabet } from '../basicVariables';
 
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
 
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
+
+afterEach(cleanup);
 
 it('render the basic file without fetching data', () => {
-    act(() => {
-        render(<App/>, container)
-    })
-    expect(container.textContent).toContain('Contacts List')
+    const { getByText } = render(<App/>)
+    getByText('Contacts List')
     for(let letter of alphabet ) {
-        expect(container.textContent).toContain(letter)
+        getByText(letter)
     }
 })
