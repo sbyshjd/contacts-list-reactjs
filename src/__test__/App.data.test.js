@@ -7,8 +7,11 @@ import axios from "axios";
 
 import { fakeInfoForTesting } from "../basicVariables";
 
-const root = document.createElement("div");
-document.body.appendChild(root);
+let root = null;
+beforeEach(() => {
+  root = document.createElement("div");
+  document.body.appendChild(root);
+})
 
 afterEach(cleanup);
 
