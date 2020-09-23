@@ -13,7 +13,5 @@ it('render with or without props',() => {
     getByText('phone')
     getByText('street')
     getByText('state')
-    getByText('postcode')
- 
-    
+    getByText('postcode')  
 })
