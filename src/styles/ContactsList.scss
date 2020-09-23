@@ -1,0 +1,22 @@
+@import "./colors";
+
+.contacts-list {
+    background-color: $lightGrey;
+    border: 1px solid $darkGrey;
+    border-style: none solid solid solid;
+    border-radius: 0px 0px 15px 15px;
+    &__item {
+      border-bottom: 2px dashed $darkGrey;
+      width: 49%;
+      cursor: pointer;
+    }
+    &__item:hover &__name {
+      font-weight: bold;
+    }
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .contacts-list__item {
+      width: 100%;
+    }
+  }

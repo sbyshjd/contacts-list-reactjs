@@ -1,53 +1,8 @@
-@import "./colors";
-
 .App {
   min-height: 100vh;
   padding: 32px;
 }
 
-.nav {
-  &__btn {
-    background-color: $lightGrey;
-    border: 1px solid $darkGrey;
-    outline: none;
-    border-radius: 5px 5px 0px 0px;
-    font-size: 20px;
-    position: relative;
 
-    &:focus {
-      outline: none;
-    }
-    &--active {
-      border-style: solid solid none solid;
-      font-weight: bold;
-      background: linear-gradient(to top, $lightGrey 85%, $darkGrey);
-    }
-  }
-  &__num {
-    position: absolute;
-    font-size: 10px;
-    right: 5%;
-    bottom: 3%;
-  }
-}
 
-.contacts-list {
-  background-color: $lightGrey;
-  border: 1px solid $darkGrey;
-  border-style: none solid solid solid;
-  border-radius: 0px 0px 15px 15px;
-  &__item {
-    border-bottom: 2px dashed $darkGrey;
-    width: 49%;
-    cursor: pointer;
-  }
-  &__item:hover &__name {
-    font-weight: bold;
-  }
-}
 
-@media only screen and (max-width: 1200px) {
-  .contacts-list__item {
-    width: 100%;
-  }
-}
